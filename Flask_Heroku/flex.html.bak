@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <title>Ethan's Watch Shop</title>
+		<link rel="stylesheet" href="flex.css" />
+    </head>
+    <body style="margin:0px;background-color:#eeeeee;">
+        <div class="head">Ethan's Watch Shop</div>
+		<div class="content">
+			<div class="box">
+				<div class="title"><a href="https://www.iwc.com/zh-tw/home.html">IWC</a></div>
+				<div>飛行員腕錶</div>
+				<div>IWC葡萄牙系列</div>
+				<div>柏濤菲諾系列</div>
+				<div>達文西系列</div>
+				<div>工程師系列</div>
+				<div>海洋時計系列</div>
+			</div>
+			<div class="box">
+				<div class="title"><a href="https://www.tudorwatch.com/zh-hant">Tudor</a></div>
+				<div>BLACK BAY FIFTY-EIGHT</div>
+				<div>BLACK BAY</div>
+				<div>BLACK BAY BRONZE</div>
+				<div>BLACK BAY CHRONO</div>
+				<div>BLACK BAY GMT</div>
+				<div>BLACK BAY PRO</div>
+			</div>
+			<div class="box">
+				<div class="title"><a href="https://www.panerai.com/zh-tw/home.html">PANERAI</a></div>
+				<div>SUBMERSIBLE</div>
+				<div>LUMINOR</div>
+				<div>LUMINOR DUE</div>
+				<div>RADIOMIR</div>
+			</div>
+		</div>
+		<div class="video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/YHgPB58vOY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+    </body>
+</html>

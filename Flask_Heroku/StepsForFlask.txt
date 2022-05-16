@@ -1,0 +1,61 @@
+============================= Flask 撰寫網站伺服器端的程式 (俗稱後端) ==============================
+
+1. Flask 套件安裝
+> pip install Flask
+
+2. 在電腦中建立網站資料夾 (C:\Users\MOC\Desktop\Ethan\Flask_Python)
+
+3. 撰寫程式 - 使用 python 撰寫第一支網站伺服器端的程式 app.py (俗稱後端)
+   這隻程式就是網站伺服器
+   這隻程式要持續執行，不能中斷，若中斷，網站就掛了 (This site can't be reached)
+
+4. 啟動網站 - 使用命令列執行 python 程式
+    > python app.py
+
+5. 測試網站 - 將網址複製到瀏覽器的網址列，進行網站測試
+    - 本機端測試: http://127.0.0.1:5000/
+
+
+============================ Heroku 雲端主機 部屬網站 ============================================
+
+1. 建立 Flask 專案描述檔案 (runtime.txt / requirements.txt / Procfile)
+
+   runtime.txt: 描述使用的 python version, check command> py --version
+		python-3.10.2
+   
+   requirements.txt: 描述程式運作所需要的套件
+		     Flask
+		     gunicorn(這個是為了讓 Heroku 用的)
+
+   Procfile: 告訴 Heroku 如何執行程式
+	     web gunicorn app:app
+             (Heroku 利用 gunicorn 來啟動專案)
+             (第一個app: app.py的檔名，第二個app是程式碼內的物件 app = Flask(__name__))
+
+2. 安裝 Git 工具
+   google 搜尋，下載安裝 Git Tool
+   https://git-scm.com/
+   安裝完成後在 cmd 下輸入 > git，確認 git 有裝好
+
+3. 到 Heroku 註冊帳號、建立應用
+   選擇建立 Application 應用程式
+   Create new app
+
+4. 安裝 Heroku 命令列工具 (Heroku CLI)
+   安裝完成後在 cmd 下輸入 > heroku，確認 heroku 有裝好
+
+5. 將程式部屬到 Heroku App，並測試
+
+   部屬 command:
+   (1) 登入 Heroku
+	> heroku login
+   (2) 初始化專案
+	> git init
+        > heroku git:remote -a 專案名稱(python-practice-italy)
+       (PS. 只有專案一開始需要做初始化專案，之後只需要 update 即可)
+   (3) 更新專案
+	> git add .
+	> git commit -am "更新的訊息"
+	> git push heroku master
+	(PS. 程式修改後要重新佈署，就必須做更新專案)
+               
