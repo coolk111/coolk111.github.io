@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript: AJAX 網路連線實務</title>
+</head>
+<body>
+    <!-- 
+        AJAX / XHR: 在網路的前端，利用 Javascript 程式進行網路連線並取得資料
+        AJAX: Asynchronous JavaScript And XML
+        XHR: XMLHttpRequest
+
+        ◆ 近年，建議採用最新的 fetch 函式來執行網路連線功能
+            ● 確認要連線的網址是什麼
+            ● 建立、發出連線
+            ● 取得伺服器的回應
+            ● 基本語法
+                fetch(網址).then(function(回應物件) {
+                    console.log(回應物件);
+                });
+            
+            ● 處理不同格式的回應
+                ○ 取得純文字的回應
+                    fetch(網址).then(function(response) {
+                        return response.text(); // text 解讀後放進下面的 data
+                    }).then(function(data) {
+                        console.log(data); // 純文字資料
+                    });
+
+                ○ 取得 JSON 格式的回應
+                    fetch(網址).then(function(response) {
+                        return response.json(); // json 解讀後放進下面的 data
+                    }).then(function(data) {
+                        console.log(data); // JSON 格式資料
+                    });
+                
+    -->
+    <h3>AJAX / XHR 網路連線實務</h3>
+    <button onclick="getData();">連線取得資料</button>
+    <div id="result"></div>
+    <script>
+        // 測試用網址
+        // https://coolk111.github.io/data/test.json
+        function getData(){
+            // 利用 fetch 連線並取得資料
+            // function 接收伺服器回應的物件(response)
+            fetch("https://coolk111.github.io/data/test.json").then(function(response){
+                // 回應物件 response 內包含許多回應資訊，不僅僅是主要的 data
+                // console.log(response);
+                return response.json(); // 取得的資料型態是 json，所以呼叫 json()做解讀
+            }).then(function(data){
+                // console.log(data); 
+                // 將已取得資料 data，呈現在畫面上
+                let result = document.querySelector("#result");
+                // 先將畫面清空
+                result.innerHTML = "";
+                for(let i=0;i<data.length;i++){
+                    let product = data[i];
+                    result.innerHTML += "<div>" + product.name + ", " + product.price + ", " + product.description + "</div>";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
